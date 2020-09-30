@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Cuentas{% endblock %}
+{% block main %}
+
+<section id="services" class="section-bg">
+  <div class="container my-5">
+    <div class="md-6 lg-4 wow bounceInUp" data-wow-duration="1.4s">
+      <div class="box">
+
+        <div class="icon" style="background: #fceef3;"><i class="ion-android-document" style="color: #ff689b;"></i></div>
+        <h4 class="title"><a href="www.facebook.com">Cuentas</a></h4>
+        <div class="form-container">
+          <div id="login" class="col s12">
+            <form class="text-left" method="POST">
+              <div class="form-group">
+                {{ form.as_p }}
+                {% csrf_token %}
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Registrar Cuenta Corriente</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

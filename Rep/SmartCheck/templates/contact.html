@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Contacto{% endblock %}
+{% block main %}
+
+<section id="about">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-7 col-md-6">
+
+          <div class="Registrarte/iniciar sesion">
+
+            <div class="container white z-depth-2">
+                
+                <div class="form-container my-5">
+
+                  <h3 class="teal-text">Contactanos</h3>
+
+                  <div class="row">
+
+                    <div id="login" class="col s12">
+
+                      <div class="col-lg-12">
+
+                      <div class="form">
+
+                        <p>Ponete en contacto con el equipo de SmartChecks.</p>
+
+                        <form action="" method="post" role="form" class="contactForm">
+
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" title="Send Message">Enviar</button>
+                        </form>
+                    
+                    </div>
+                
+                </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+            
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+
+    {% load bootstrap4 %}
+
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- CEO
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    -->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{% static 'images/favicons/apple-touch-icon.png' %}" sizes="180x180">
+    <link rel="icon" href="{% static 'images/favicons/android-chrome-192x192.png'%}" sizes="192x192" type="image/png">
+    <link rel="icon" href="{% static 'images/favicons/android-chrome-512x512.png'%}" sizes="512x512" type="image/png">
+    <link rel="icon" href="{% static 'images/favicons/favicon-32x32.png'%}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'images/favicons/favicon-16x16.png'%}" sizes="16x16" type="image/png">
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico'%}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    {% bootstrap_css %}
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header id="header">
+
+        <div id="topbar">
+            <div class="container">
+                <div class="social-links">
+                    <a href="" class="instagram"><i class="fa fa-envelope-square"></i></a>
+                    <a href="" class="instagram"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="logo float-left">
+                <h1 class="text-light">
+                    <a href="{% url 'home' %}" class="scrollto header">
+                        <span>smartchecks</span>
+                    </a>
+                </h1>
+            </div>
+
+            <nav class="main-nav float-right d-none d-lg-block">
+                <ul>
+
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'main' %}">Inicio</a></li>
+                    <li><a href="{% url 'cheques-propios' %}">Cheques Propios</a></li>
+                    <li><a href="{% url 'cheques-terceros' %}">Cheques de Terceros</a></li>
+                    <li><a href="{% url 'bancos' %}">Bancos</a></li>
+                    <li><a href="{% url 'cuentas' %}">Cuentas</a></li>
+                    <li><a href="{% url 'logout' %}">Salir</a></li>
+                    {% else %}
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    <li><a href="{% url 'logon' %}">Registrate</a></li>                    
+                    <li><a href="{% url 'team'%} ">Equipo</a></li>
+                    <li><a href="{% url 'contactus' %}">Contacto</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+            <!-- .main-nav -->
+        </div>
+    </header>
+<!-- #header -->
+
+    {% block main %}
+    {% endblock main %}
+
+<!-- Footer -->
+    <footer id="footer" class="section-bg">
+
+        <div class="container">
+
+            <div class="copyright">
+                &copy; Copyright <strong>SmartChecks</strong>. Todos los derechos reservados
+            </div>
+
+        </div>
+
+    </footer>
+<!-- #footer -->
+
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/mobile-nav/mobile-nav.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="{% static 'lib/contactform/contactform.js'%}"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

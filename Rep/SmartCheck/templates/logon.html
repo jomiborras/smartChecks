@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Registrate{% endblock %}
+{% block main %}
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-7 col-md-6">
+
+          <div class="Registrarte/iniciar sesion">
+
+            <div class="container white z-depth-2">
+                
+                <div class="form-container my-5">
+
+                  <h3 class="teal-text">Registrate</h3>
+
+                  <div class="row">
+
+                    <div id="login" class="col s12">
+
+                      <form method = "POST">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Registrate</button>
+                      </form>
+
+                      {% comment %} <form>
+
+                        <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="">Nombre</label>
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                        
+                                    <div class="col">
+                                        <label for="">Apellido</label>
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" id="">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="exampleInputPassword1">Confirmar Email</label>
+                            <input type="email" class="form-control" id="">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="exampleInputPassword1">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="exampleInputPassword1">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Registrate</button>
+
+                      </form> {% endcomment %}
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+            
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}

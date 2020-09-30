@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}SmartChecks{% endblock %}
+{% block main %}
+
+    <section id="services" class="section-bg">
+
+        <div class="container my-5">
+
+            <header class="section-header">
+                <h3>Cheques</h3>
+                <p>Agrega o selecciona cheques cargados previamente.</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
+
+                    <div class="box">
+
+                        <div class="icon" style="background: #fceef3;"><i class="ion-cash" style="color: #ff689b;"></i></div>
+                        <h4 class="title"><a href="{% url 'cheques-propios' %}">Cheques Propios</a></h4>
+                        <p class="description">Registrá tus Cheques Propios</p>
+
+                    </div>
+                
+                </div>
+
+                <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
+
+                    <div class="box">
+
+                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-briefcase" style="color: #e98e06;"></i></div>
+                        <h4 class="title"><a href="{% url 'cheques-terceros' %}">Cheques de Terceros</a></h4>
+                        <p class="description">Resgistrá tus Cheques de Terceros</p>
+
+                    </div>
+                
+                </div>
+
+          <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #e6fdfc;"><i class="ion-android-home" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="{% url 'bancos' %}">Bancos</a></h4>
+              <p class="description">Registrá tus Bancos</p>
+            </div>
+
+            
+
+        </div>
+<div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon" style="background: #e6fdfc;"><i class="ion-android-document" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a href="{% url 'cuentas' %}">Cuentas</a></h4>
+              <p class="description">Registrá tus Cuentas Corrientes</p>
+            </div>
+      </div>
+    </section><!-- #services -->
+
+{% endblock %}
