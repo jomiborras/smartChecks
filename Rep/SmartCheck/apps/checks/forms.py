@@ -15,7 +15,6 @@ class CuentasCorrienteForm(forms.ModelForm):
         model = CuentasCorriente
         fields = ['bankId', 'nroCuenta']
         labels = {'bankId': 'Banco', 'nroCuenta': 'Número de Cuenta'}
-        bankName = forms.ModelChoiceField(queryset=Banco.objects.all(), required=True)
         widgets = {
             'bankId': forms.Select(attrs={'class':'form-control col-6'}),
             'nroCuenta': forms.TextInput(attrs={'class':'form-control col-6'})
@@ -24,8 +23,24 @@ class CuentasCorrienteForm(forms.ModelForm):
 class ChequePropioForm(forms.ModelForm):
     class Meta:
         model = Cheque
-        fields = ['numeroCuenta', 'nroCheque', 'fechaEmision', 'fechaPago', 'monto', 'nombreEstado', 'descripcion']
-        labels = {'numeroCuenta': 'Número de Cuenta', 'nroCheque': 'Número de Cheque', 'fechaEmision': 'Fecha de Emisión', 'fechaPago': 'Fecha de Pago', 'monto': 'Monto', 'nombreEstado': 'Estado', 'descripcion': 'Comentarios'}
+        fields = [
+            'numeroCuenta',
+            'nroCheque',
+            'fechaEmision',
+            'fechaPago',
+            'monto',
+            'nombreEstado',
+            'descripcion'
+            ]
+        labels = {
+            'numeroCuenta': 'Número de Cuenta',
+            'nroCheque': 'Número de Cheque',
+            'fechaEmision': 'Fecha de Emisión',
+            'fechaPago': 'Fecha de Pago',
+            'monto': 'Monto',
+            'nombreEstado': 'Estado',
+            'descripcion': 'Comentarios'
+            }
         # widgets = {'numeroCuenta': forms.Select(attrs={'class':'form-control col-6'}),
         #            'nroCheque': forms.TextInput(attrs={'type': 'text', 'class':'form-control col-6'}),
         #            'fechaEmision': forms.DateField(attrs={'type': 'text', 'class':'form-control col-6'}),

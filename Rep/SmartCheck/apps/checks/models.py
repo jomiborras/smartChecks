@@ -6,14 +6,18 @@ from apps.persons.models import *
 class Banco(models.Model):
     bankId = models.AutoField(primary_key=True)
     bankName = models.CharField(max_length=100)
+    def __str__(self):
+        return self.bankName
 
 class CuentasCorriente(models.Model):
     nroCuenta = models.CharField(max_length=100)
     bankId = models.ForeignKey(Banco, on_delete=models.CASCADE)
     email = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.bankId
 
     def __str__(self):
-        return self.bankName
+        return self.email
 
 class Estado(models.Model):
 	nombreEstado = models.CharField(max_length = 100,primary_key=True)
