@@ -10,7 +10,7 @@
       <div class="box">
 
         <div class="icon" style="background: #fceef3;"><i class="ion-android-document" style="color: #ff689b;"></i></div>
-        <h4 class="title"><a href="www.facebook.com">Cuentas</a></h4>
+        <h4 class="title"><a href="#">Cuentas</a></h4>
         <div class="form-container">
           <div id="login" class="col s12">
             <form class="text-left" method="POST">
@@ -25,6 +25,40 @@
             </form>
           </div>
         </div>
+
+                    <div class="form-container">
+
+            {% if cuentas %}
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Número de Cuenta</th>
+                  <th scope="col">Banco</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for cuenta in cuentas %}
+                <tr>
+                  <td>{{ cuenta.nroCuenta }}</td>
+                  <td>{{ cuenta.bankId }}</td>
+                  <td>
+                    <a href="" class="btn btn-warning">Editar</a>
+                    <a href="" class="btn btn-danger">Eliminar</a>
+                  </td>
+                  
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+            {% else %}
+              <p> No se encontraron registros. Registre una Cuenta para empezar </p>
+            {% endif %}
+
+          </div>
+
 
       </div>
     </div>

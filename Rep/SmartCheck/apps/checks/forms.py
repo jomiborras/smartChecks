@@ -24,7 +24,7 @@ class ChequePropioForm(forms.ModelForm):
     class Meta:
         model = Cheque
         fields = [
-            'numeroCuenta',
+            'nroCuenta',
             'nroCheque',
             'fechaEmision',
             'fechaPago',
@@ -33,7 +33,7 @@ class ChequePropioForm(forms.ModelForm):
             'descripcion'
             ]
         labels = {
-            'numeroCuenta': 'Número de Cuenta',
+            'nroCuenta': 'Número de Cuenta',
             'nroCheque': 'Número de Cheque',
             'fechaEmision': 'Fecha de Emisión',
             'fechaPago': 'Fecha de Pago',
@@ -41,11 +41,11 @@ class ChequePropioForm(forms.ModelForm):
             'nombreEstado': 'Estado',
             'descripcion': 'Comentarios'
             }
-        # widgets = {'numeroCuenta': forms.Select(attrs={'class':'form-control col-6'}),
-        #            'nroCheque': forms.TextInput(attrs={'type': 'text', 'class':'form-control col-6'}),
-        #            'fechaEmision': forms.DateField(attrs={'type': 'text', 'class':'form-control col-6'}),
-        #            'fechaPago': forms.DateField(attrs={'type': 'text', 'class':'form-control col-6'}),
-        #            'monto': forms.DecimalField(attrs={'type': 'number', 'class':'form-control col-6'}, required=False),
-        #            'nombreEstado': forms.Select(attrs={'class':'form-control col-6'}),
-        #            'descripcion': forms.Textarea(attrs={'class':'form-control col-6', 'rows': '6'})
-        #            }
+        widgets = {'nroCuenta': forms.Select(attrs={'class':'form-control col-6'}),
+                   'nroCheque': forms.TextInput(attrs={'type': 'text', 'class':'form-control col-6'}),
+                   'fechaEmision': forms.DateInput(attrs={'type': 'date', 'class':'form-control col-6'}),
+                   'fechaPago': forms.DateInput(attrs={'type': 'date', 'class':'form-control col-6'}),
+                   'monto': forms.NumberInput(attrs={'type': 'number', 'class':'form-control col-6'}),
+                   'nombreEstado': forms.Select(attrs={'class':'form-control col-6'}),
+                   'descripcion': forms.Textarea(attrs={'class':'form-control col-6', 'rows': '6'})
+                   }

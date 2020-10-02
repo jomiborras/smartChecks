@@ -8,7 +8,7 @@ class BancoAdmin(admin.ModelAdmin):
 
 @admin.register(CuentasCorriente)
 class CuentasCorrienteAdmin(admin.ModelAdmin):
-    list_display = ['nroCuenta', 'bankId', 'email']
+    list_display = ['nroCuenta', 'bankId', 'userId']
 
 @admin.register(Estado)
 class EstadoAdmin(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class EstadoAdmin(admin.ModelAdmin):
 
 @admin.register(Cheque)
 class ChaqueAdmin(admin.ModelAdmin):
-    list_display = ['numeroCuenta', 'nroCheque', 'fechaEmision', 'fechaPago', 'monto', 'nombreEstado']
+    list_display = ['nroCuenta', 'nroCheque', 'fechaEmision', 'fechaPago', 'monto', 'nombreEstado']
 
 @admin.register(Propio)
 class PropioAdmin(admin.ModelAdmin):

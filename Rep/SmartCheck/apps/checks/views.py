@@ -35,19 +35,23 @@ def bancos(request):
 def cuentas(request):
     if request.user.is_authenticated:
 
+        cuentas = CuentasCorriente.objects.all()
+
         form = CuentasCorrienteForm()
         if request.method == "POST":
-            form = CuentasCorriente(request.POST)
+            form = CuentasCorrienteForm(request.POST)
 
             if form.is_valid():
-                instacia = form.save(commit=False)
+                instancia = form.save(commit=False)
                 instancia.save()
                 return redirect('cuentas')
-        return render(request, 'accounts.html', {'form': form})
+        return render(request, 'accounts.html', {'form': form, 'cuentas': cuentas})
     return redirect('login')
 
 def chequesPropios(request):
     if request.user.is_authenticated:
+
+        chequesPropios = Cheque.objects.all()
         
         form = ChequePropioForm()
         if request.method == "POST":
@@ -57,5 +61,5 @@ def chequesPropios(request):
                 instancia = form.save(commit=False)
                 instancia.save()
                 return redirect('cheques-propios')
-        return render(request, 'own.html', {'form': form})
+        return render(request, 'own.html', {'form': form, 'cheques': chequesPropios})
     return redirect('login')

@@ -40,7 +40,7 @@
 
             <div class="form-container">
 
-            {% comment %} {% if bancos %} {% endcomment %}
+            {% if bancos %}
 
             <table class="table">
               <thead>
@@ -65,9 +65,9 @@
               </tbody>
             </table>
 
-            {% comment %} {% else %}
+            {% else %}
               <p> No se encontraron registros. Registre un Banco para empezar </p>
-            {% endif %} {% endcomment %}
+            {% endif %}
 
           </div>
 
