@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '4x)#=(ea7f&1c1g%%efo$44rde31rhe@+79i9)nk$-*3u)#m6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smartcheck.pythonanywhere.com']
 
 
 # Application definition
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/smartcheck/smartCheck/Rep/SmartCheks/static'
 
 STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR), 'static'),)
 
